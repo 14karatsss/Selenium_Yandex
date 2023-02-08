@@ -22,7 +22,7 @@ class SearchHelper(BasePage):
 
     def click_on_the_search_button(self):
         button = ClickButton(self.driver)
-        button.checkandclick(YandexSeacrhLocators.LOCATOR_YANDEX_SEARCH_BUTTON)
+        button.check_and_click(YandexSeacrhLocators.LOCATOR_YANDEX_SEARCH_BUTTON)
 
     def check_navigation_bar(self):
         all_list = self.find_elements(YandexSeacrhLocators.LOCATOR_YANDEX_NAVIGATION_BAR,time=2)
