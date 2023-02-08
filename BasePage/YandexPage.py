@@ -2,6 +2,7 @@
 from BasePage.BaseApp import BasePage
 from selenium.webdriver.common.by import By
 from factory_page.button import ClickButton
+from factory_page.field import ClickAndWriteField
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -15,10 +16,8 @@ class YandexSeacrhLocators:
 class SearchHelper(BasePage):
 
     def enter_word(self, word):
-        search_field = self.find_element(YandexSeacrhLocators.LOCATOR_YANDEX_SEARCH_FIELD)
-        search_field.click()
-        search_field.send_keys(word)
-        return search_field
+        field = ClickAndWriteField(self.driver)
+        field.check_and_click(YandexSeacrhLocators.LOCATOR_YANDEX_SEARCH_FIELD, "hello")
 
     def click_on_the_search_button(self):
         button = ClickButton(self.driver)
